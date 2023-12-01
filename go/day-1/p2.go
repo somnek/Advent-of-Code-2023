@@ -28,10 +28,9 @@ func PartTwo() {
 	var num, sum int
 
 	lines := utils.ReadLines(INPUT)
-	for i, line := range lines {
+	for _, line := range lines {
 		num = findNum2(line)
 		sum += num
-		fmt.Println(i, line, num)
 	}
 	fmt.Println(sum)
 }
@@ -74,7 +73,7 @@ func findNum2(s string) int {
 		}
 	}
 
-	fmt.Println("array: ", numArray)
+	// join left & right
 	joined := strings.Join(numArray, "")
 	if num, err = strconv.Atoi(joined); err != nil {
 		log.Fatalf("%v | %v for %v", err, joined, s)
@@ -84,10 +83,8 @@ func findNum2(s string) int {
 
 func letterToDigit(chunk string) int {
 	for a, v := range M {
-		if len(chunk) >= len(a) {
-			if chunk[:len(a)] == a {
-				return v
-			}
+		if strings.HasPrefix(chunk, a) {
+			return v
 		}
 	}
 	return -1

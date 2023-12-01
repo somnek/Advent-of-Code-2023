@@ -41,6 +41,7 @@ func findNum(s string) int {
 		}
 	}
 
+	// join left & right
 	joined := strings.Join(numArray, "")
 	if num, err = strconv.Atoi(joined); err != nil {
 		log.Fatalf("%v | %v for %v", err, joined, s)

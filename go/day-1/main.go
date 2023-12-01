@@ -5,6 +5,6 @@ const (
 )
 
 func main() {
-	// PartOne()
+	PartOne()
 	PartTwo()
 }
