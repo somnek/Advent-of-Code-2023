@@ -6,7 +6,7 @@ import (
 	"strings"
 )
 
-// TODO: try Ternary Search (divide & conquer)
+// TODO: try Binary Search
 func PartTwo() {
 	// parse
 	lines := utils.ReadLines("input.txt")
@@ -14,5 +14,5 @@ func PartTwo() {
 	dToBeat := utils.StrToInt(strings.Join(strings.Fields(lines[1])[1:], ""))
 
 	ans := calc(tToBeat, dToBeat)
-	fmt.Println(ans)
+	fmt.Println("ans: ", ans)
 }
